@@ -2,7 +2,7 @@ package com.ifood.carrinhoapi.service;
 
 import com.ifood.carrinhoapi.model.Item;
 import com.ifood.carrinhoapi.model.Sacola;
-import com.ifood.carrinhoapi.resource.ItemDto;
+import com.ifood.carrinhoapi.resource.dto.ItemDto;
 
 public interface SacolaService {
 
