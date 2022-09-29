@@ -1,4 +1,4 @@
-package com.ifood.carrinhoapi.resource;
+package com.ifood.carrinhoapi.resource.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
