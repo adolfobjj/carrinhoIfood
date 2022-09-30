@@ -32,7 +32,7 @@ public class SacolaServiceImp implements SacolaService {
     public Sacola fecharSacola(Long id, int numeroformaPagamento) {
         Sacola sacola = verSacola(id);
         if (sacola.getItens().isEmpty()){
-            throw new RuntimeException("Inclua itens na sacola!")
+            throw new RuntimeException("Inclua itens na sacola!");
         }
        FormaPagamento formaPagamento =
                numeroformaPagamento == 0? FormaPagamento.DINHEIRO : FormaPagamento.MAQUINETA;
