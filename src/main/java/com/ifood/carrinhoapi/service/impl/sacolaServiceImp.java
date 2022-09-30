@@ -1,5 +1,6 @@
 package com.ifood.carrinhoapi.service.impl;
 
+import com.ifood.carrinhoapi.enumeration.FormaPagamento;
 import com.ifood.carrinhoapi.model.Item;
 import com.ifood.carrinhoapi.model.Sacola;
 import com.ifood.carrinhoapi.repository.SacolaRepository;
@@ -28,7 +29,16 @@ public class SacolaServiceImp implements SacolaService {
     }
 
     @Override
-    public Sacola fecharSacola(Long id, int formaPagamento) {
-        return null;
+    public Sacola fecharSacola(Long id, int numeroformaPagamento) {
+        Sacola sacola = verSacola(id);
+        if (sacola.getItens().isEmpty()){
+            throw new RuntimeException("Inclua itens na sacola!")
+        }
+       FormaPagamento formaPagamento =
+               numeroformaPagamento == 0? FormaPagamento.DINHEIRO : FormaPagamento.MAQUINETA;
+
+        sacola.setFormaPagamento(formaPagamento);
+        sacola.setFechada(true);
+        return sacolaRepository.save(sacola);
     }
 }
