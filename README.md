@@ -27,7 +27,18 @@ Json : </br>
         "cep": "12345-678",</br>
         "complemento": "Apartamento 101"</br>
     }</br>
-}</br>
+}</br></br>
+http://localhost:8080/produtos </br>
+{ </br>
+    "nome": "Pizza", </br>
+    "valorUnitario": 50.00, </br>
+    "disponivel": true, </br>
+    "restaurante": { </br>
+        "nome": "habib", </br>
+        "complemento": "bloco 5", </br>
+        "cep": "22751-000" </br>
+    } </br>
+} </br> </br>
 
 
 ### Tecnologias Utilizadas
