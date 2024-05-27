@@ -58,15 +58,8 @@ http://localhost:8080/carrinho/criar</br>
   "fechada": false</br>
 }</br></br>
 
-
-
-### Tecnologias Utilizadas
-- **Spring Initializr**: [https://start.spring.io/](https://start.spring.io/)
-- **Spring Boot Starter Web**: 2.7.4
-- **Spring Boot Starter Data JPA**: 2.7.4
-- **Lombok**: 1.18.24
-- **Springfox Boot Starter**: 3.0.0
-- **Banco de Dados H2**: 2.1.214
+http://localhost:8080/carrinho/1/fechar (PUT)</br>
+Aqui muda o status do carrinho para fechado</br>
 
 ### Contribuições
 Este repositório foi criado para fins educacionais, portanto, sinta-se à vontade para contribuir. Se este projeto foi útil de alguma forma, por favor, avise-nos. E se você conhece alguém que possa achar esse conteúdo útil, não hesite em compartilhá-lo.
