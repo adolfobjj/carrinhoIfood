@@ -24,7 +24,4 @@ public class Restaurante {
     private String nome;
     private String endereco;
 
-    @OneToMany(mappedBy = "restaurante")
-    private List<Produto> produtos = new ArrayList<>();
-
 }

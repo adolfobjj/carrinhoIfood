@@ -25,10 +25,16 @@ public class Item {
     @JoinColumn(name = "produto_id", nullable = false)
     private Produto produto;
 
-    private int quantidade;
-
     @ManyToOne
     @JoinColumn(name = "carrinho_id", nullable = false)
-    @JsonBackReference
+    @JsonIgnore
     private Carrinho carrinho;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurante_id", nullable = false)
+    private Restaurante restaurante;
+
+    private Integer quantidade;
+
+
 }

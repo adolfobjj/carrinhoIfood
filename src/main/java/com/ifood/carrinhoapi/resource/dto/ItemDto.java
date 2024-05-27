@@ -13,7 +13,12 @@ import javax.persistence.Embeddable;
 @AllArgsConstructor
 @Embeddable
 public class ItemDto {
+
+    private Long id;
     private Long produtoId;
     private Long carrinhoId;
+    private Long restauranteId;
     private int quantidade;
+
 }
+

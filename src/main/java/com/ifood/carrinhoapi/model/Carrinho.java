@@ -1,5 +1,6 @@
 package com.ifood.carrinhoapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ifood.carrinhoapi.enumeration.FormaPagamento;
 import lombok.AllArgsConstructor;
@@ -24,7 +25,8 @@ public class Carrinho {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cliente_id", nullable = false)
+    @JoinColumn(name = "cliente_id")
+    @JsonIgnore
     private Cliente cliente;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carrinho")
