@@ -64,21 +64,22 @@ public class CarrinhoServiceImpl implements CarrinhoService {
     public Carrinho verCarrinho(Long id) {
         return null;
     }
-
     @Override
-    public Carrinho fecharCarrinho(Long id, FormaPagamento formaPagamento) {
+    public Carrinho fecharCarrinho(Long idCarrinho) {
         return null;
     }
 
     @Override
-    public Carrinho fecharCarrinho(Long idCarrinho, int formaPagamento) {
+    public Carrinho fecharCarrinho(Long idCarrinho, FormaPagamento formaPagamento) {
         return null;
     }
+
+
 
     @Override
     public ItemDto toDto(Item item) {
         return null;
     }
 
-    // Outros métodos
+
 }

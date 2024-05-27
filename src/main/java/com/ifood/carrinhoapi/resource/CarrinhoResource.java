@@ -1,6 +1,7 @@
 package com.ifood.carrinhoapi.resource;
 
 
+import com.ifood.carrinhoapi.enumeration.FormaPagamento;
 import com.ifood.carrinhoapi.model.Carrinho;
 import com.ifood.carrinhoapi.model.Item;
 import com.ifood.carrinhoapi.resource.dto.ItemDto;
@@ -25,6 +26,10 @@ public class CarrinhoResource {
         Item item = carrinhoService.incluirItemNoCarrinho(itemDto);
         return ResponseEntity.ok(carrinhoService.toDto(item));
     }
+    public Carrinho fecharCarrinho(Long idCarrinho, FormaPagamento formaPagamento) {
+        return carrinhoService.fecharCarrinho(idCarrinho, formaPagamento);
+    }
+
 
     @GetMapping("/{id}")
     public Carrinho verCarrinho(@PathVariable("id") Long id){
@@ -32,9 +37,16 @@ public class CarrinhoResource {
     }
 
     @PatchMapping("/fechar-carrinho/{carrinhoId}")
-    public Carrinho fecharCarrinho(@PathVariable("carrinhoId") Long idCarrinho,
-                                   @RequestParam("formaPagamento") int formaPagamento){
+    public Carrinho fecharCarrinho(@PathVariable("carrinhoId") Long idCarrinho) {
+        return carrinhoService.fecharCarrinho(idCarrinho);
+    }
+
+    @PatchMapping("/fechar-carrinho-com-forma-pagamento/{carrinhoId}")
+    public Carrinho fecharCarrinhoComFormaPagamento(@PathVariable("carrinhoId") Long idCarrinho,
+                                                    @RequestParam("formaPagamento") FormaPagamento formaPagamento) {
         return carrinhoService.fecharCarrinho(idCarrinho, formaPagamento);
     }
+
+
 
 }

@@ -13,8 +13,10 @@ public interface CarrinhoService {
     Carrinho verCarrinho(Long id);
     Carrinho fecharCarrinho(Long id, FormaPagamento formaPagamento);
 
-    Carrinho fecharCarrinho(Long idCarrinho, int formaPagamento);
+
 
     ItemDto toDto(Item item);
+
+    Carrinho fecharCarrinho(Long idCarrinho);
 }
 
