@@ -18,25 +18,28 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 
 **Para uma demonstração mais suave da aplicação, recomendamos a instalação do IntelliJ IDEA e a execução do projeto a partir da IDE.**
 
-### Começando
-Para executar a aplicação, siga estas etapas no seu terminal/console:
+### Método Post :</br>
+http://localhost:8080/clientes </br>
+Json : </br>
+{</br>
+    "nome": "Exemplo Nome 2",</br>
+    "endereco": {</br>
+        "cep": "12345-678",</br>
+        "complemento": "Apartamento 101"</br>
+    }</br>
+}</br></br>
+http://localhost:8080/produtos </br>
+{ </br>
+    "nome": "Pizza", </br>
+    "valorUnitario": 50.00, </br>
+    "disponivel": true, </br>
+    "restaurante": { </br>
+        "nome": "habib", </br>
+        "complemento": "bloco 5", </br>
+        "cep": "22751-000" </br>
+    } </br>
+} </br> </br>
 
-```bash
-# Clone o repositório
-git clone <repository_url>
-
-# Navegue até a pasta do projeto
-cd <project_folder>
-
-# Compile e execute a aplicação
-./mvnw spring-boot:run
-```
-
-### Swagger UI para a API
-Você pode explorar e interagir com a API usando o Swagger UI. Depois de iniciar a aplicação, abra seu navegador da web e acesse a seguinte URL:
-```
-http://localhost:8080/swagger-ui.html
-```
 
 ### Tecnologias Utilizadas
 - **Spring Initializr**: [https://start.spring.io/](https://start.spring.io/)
