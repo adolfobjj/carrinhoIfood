@@ -14,7 +14,6 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class ItemDto {
     private Long produtoId;
+    private Long carrinhoId;
     private int quantidade;
-    private Long idSacola;
-
 }
