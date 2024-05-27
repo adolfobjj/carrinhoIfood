@@ -22,23 +22,25 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 http://localhost:8080/clientes </br>
 Json : </br>
 {</br>
-    "nome": "Exemplo Nome 2",</br>
-    "endereco": {</br>
-        "cep": "12345-678",</br>
-        "complemento": "Apartamento 101"</br>
-    }</br>
+     "nome": "Nome do Cliente",</br>
+  "endereco": "Endereço do Cliente"</br>
 }</br></br>
 http://localhost:8080/produtos </br>
 { </br>
-    "nome": "Pizza", </br>
-    "valorUnitario": 50.00, </br>
-    "disponivel": true, </br>
-    "restaurante": { </br>
-        "nome": "habib", </br>
-        "complemento": "bloco 5", </br>
-        "cep": "22751-000" </br>
-    } </br>
-} </br> </br>
+  "nome": "Nome do Produto", </br>
+  "valorUnitario": 10.5, </br>
+  "restaurante": { </br>
+    "id": 1, </br>
+    "nome": "Nome do Restaurante", </br>
+    "endereco": "Endereço do Restaurante" </br>
+  } </br>
+} </br>
+http://localhost:8080/restaurantes </br>
+{</br>
+  "nome": "Nome do Restaurante",</br>
+  "endereco": "Endereço do Restaurante"</br>
+}</br></br>
+
 
 
 ### Tecnologias Utilizadas
