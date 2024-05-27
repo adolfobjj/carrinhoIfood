@@ -41,11 +41,11 @@ public class CarrinhoResource {
         return carrinhoService.fecharCarrinho(idCarrinho);
     }
 
-    @PatchMapping("/fechar-carrinho-com-forma-pagamento/{carrinhoId}")
-    public Carrinho fecharCarrinhoComFormaPagamento(@PathVariable("carrinhoId") Long idCarrinho,
-                                                    @RequestParam("formaPagamento") FormaPagamento formaPagamento) {
-        return carrinhoService.fecharCarrinho(idCarrinho, formaPagamento);
-    }
+//    @PatchMapping("/fechar-carrinho-com-forma-pagamento/{carrinhoId}")
+//    public Carrinho fecharCarrinhoComFormaPagamento(@PathVariable("carrinhoId") Long idCarrinho,
+//                                                    @RequestParam("formaPagamento") FormaPagamento formaPagamento) {
+//        return carrinhoService.fecharCarrinho(idCarrinho, formaPagamento);
+//    }
 
 
 

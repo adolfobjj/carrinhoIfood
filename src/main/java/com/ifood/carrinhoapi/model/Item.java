@@ -27,7 +27,6 @@ public class Item {
 
     @ManyToOne
     @JoinColumn(name = "carrinho_id", nullable = false)
-    @JsonIgnore
     private Carrinho carrinho;
 
     @ManyToOne

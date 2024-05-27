@@ -26,7 +26,6 @@ public class Carrinho {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id")
-    @JsonIgnore
     private Cliente cliente;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "carrinho")
