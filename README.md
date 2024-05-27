@@ -40,6 +40,23 @@ http://localhost:8080/restaurantes </br>
   "nome": "Nome do Restaurante",</br>
   "endereco": "Endereço do Restaurante"</br>
 }</br></br>
+http://localhost:8080/carrinho/criar</br>
+{</br>
+  "cliente": {</br>
+    "id": 1,</br>
+    "nome": "Nome do Cliente",</br>
+    "endereco": "Endereço do Cliente"</br>
+  },</br>
+  "itens": [</br>
+    {</br>
+      "produtoId": 2, // fornecendo apenas o id do produto</br>
+      "quantidade": 2</br>
+    }</br>
+  ],</br>
+  "valorTotal": 21.0,</br>
+  "formaPagamento": "DINHEIRO",</br>
+  "fechada": false</br>
+}</br></br>
 
 
 
