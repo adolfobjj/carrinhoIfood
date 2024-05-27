@@ -5,10 +5,7 @@ import com.ifood.carrinhoapi.model.Carrinho;
 import com.ifood.carrinhoapi.model.Item;
 import com.ifood.carrinhoapi.model.Produto;
 import com.ifood.carrinhoapi.model.Restaurante;
-import com.ifood.carrinhoapi.repository.CarrinhoRepository;
-import com.ifood.carrinhoapi.repository.ItemRepository;
-import com.ifood.carrinhoapi.repository.ProdutoRepository;
-import com.ifood.carrinhoapi.repository.RestauranteRepository;
+import com.ifood.carrinhoapi.repository.*;
 import com.ifood.carrinhoapi.resource.dto.CarrinhoDto;
 import com.ifood.carrinhoapi.resource.dto.ItemDto;
 import com.ifood.carrinhoapi.service.CarrinhoService;
@@ -27,11 +24,24 @@ public class CarrinhoServiceImpl implements CarrinhoService {
     private final ProdutoRepository produtoRepository;
     private final RestauranteRepository restauranteRepository;
     private final ItemRepository itemRepository;
+    private final ClienteRepository clienteRepository;
 
     @Override
     public Carrinho criarCarrinho(CarrinhoDto carrinhoDto) {
-        return null;
+        log.info("Criando um novo carrinho");
+
+        Carrinho carrinho = new Carrinho();
+        carrinho.setCliente(clienteRepository.findById(carrinhoDto.getCliente().getId())
+                .orElseThrow(() -> new NoSuchElementException("Cliente não encontrado com ID: " + carrinhoDto.getCliente().getId())));
+        carrinho.setValorTotal(carrinhoDto.getValorTotal());
+        carrinho.setFormaPagamento(FormaPagamento.valueOf(carrinhoDto.getFormaPagamento()));
+        carrinho.setFechada(carrinhoDto.isFechada());
+
+        // Aqui você pode adicionar lógica para criar itens do carrinho, se necessário
+
+        return carrinhoRepository.save(carrinho);
     }
+
 
     @Override
     public Item incluirItemNoCarrinho(ItemDto itemDto) {
@@ -67,6 +77,21 @@ public class CarrinhoServiceImpl implements CarrinhoService {
     @Override
     public Carrinho fecharCarrinho(Long idCarrinho) {
         return null;
+    }
+
+    @Override
+    public Carrinho getCarrinhoById(Long id) {
+        return null;
+    }
+
+    @Override
+    public Carrinho atualizarCarrinho(Long id, Carrinho carrinhoAtualizado) {
+        return null;
+    }
+
+    @Override
+    public void deletarCarrinho(Long id) {
+
     }
 
     @Override

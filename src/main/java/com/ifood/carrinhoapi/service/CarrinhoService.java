@@ -18,5 +18,11 @@ public interface CarrinhoService {
     ItemDto toDto(Item item);
 
     Carrinho fecharCarrinho(Long idCarrinho);
+
+    Carrinho getCarrinhoById(Long id);
+
+    Carrinho atualizarCarrinho(Long id, Carrinho carrinhoAtualizado);
+
+    void deletarCarrinho(Long id);
 }
 
