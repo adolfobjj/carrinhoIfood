@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 @Data
 @Builder
@@ -17,11 +18,13 @@ import java.util.List;
 public class Restaurante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Produto> cardapio;
-    @Embedded
-    private Endereco endereco;
+    private String endereco;
+
+    @OneToMany(mappedBy = "restaurante")
+    private List<Produto> produtos = new ArrayList<>();
+
 }

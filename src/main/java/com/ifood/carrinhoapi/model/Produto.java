@@ -18,14 +18,14 @@ import javax.persistence.*;
 public class Produto {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private  String nome;
-    private double valorUnitario;
-    @Builder.Default
-    private Boolean disponivel = true;
-    @ManyToOne
-    @JsonIgnore
+
+    private String nome;
+    private Double valorUnitario;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurante_id")
     private Restaurante restaurante;
 
 }

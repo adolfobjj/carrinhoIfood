@@ -1,5 +1,6 @@
 package com.ifood.carrinhoapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -17,9 +18,17 @@ import javax.persistence.*;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne
-    @JsonIgnore
-    private Sacola sacola;
+
+    @ManyToOne
+    @JoinColumn(name = "produto_id", nullable = false)
+    private Produto produto;
+
+    private int quantidade;
+
+    @ManyToOne
+    @JoinColumn(name = "carrinho_id", nullable = false)
+    @JsonBackReference
+    private Carrinho carrinho;
 }
